@@ -1,14 +1,27 @@
 import streamlit as st
 import database as db
+from personal_Details import aadhar_Details #we can keep filename and the function name same
+from personal_Details import voter_Id_Details #we can keep filename and the function name same
 
 st.set_page_config(layout='wide', page_title='My Web App', page_icon=':smiley:', initial_sidebar_state='auto')
 
 headerSection = st.container()
-mainSection = st.container()
+main_Section = st.container()
 login_Section = st.container()
 
 
 column_1,column_2=st.columns(2)
+
+def personal_Details():
+     with main_Section:
+          aadhar_details,voter_Id=main_Section.tabs(["Aadhar Details","Voter Id Details"])
+          with aadhar_details:
+               aadhar_Details()
+          with voter_Id:
+               voter_Id_Details()
+     
+
+
 
 def show_Main_Page():
     st.title(f"Hi {st.session_state['name']}")
@@ -26,9 +39,11 @@ def show_Main_Page():
     st.write("Click on Academic Details to Store Academic Details")
 
     with column_1:
-        st.button("Personal Details",key="Personal details")
+        st.button("Personal Details",on_click=personal_Details,key="Personal details")
     with column_2:     
         st.button("Academic Details",key="Academic Details")
+
+
 
 def loggedIn_Clicked(user_Name, password):
     value,name = db.login(user_Name, password) #calling the login function from the database.py file

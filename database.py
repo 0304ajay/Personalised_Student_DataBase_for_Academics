@@ -17,7 +17,9 @@ def login(user_Id,password):
         return True,data[0][1]
     else:
         return False,None
-    
+
+def add_My_Details(first_Name,last_Name,Aadhar_Number,Date_Of_Birth,phone_No,Email_Id):
+    print("Personal Details")
 
 
 
