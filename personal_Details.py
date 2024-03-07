@@ -22,12 +22,27 @@ def aadhar_Details():
         Date_Of_Birth = st.text_input("Date of Birth",value="2021-01-01") # 0304 For how I have added  I am Getting the error
         Email_Id=st.text_input(label="Email_Id",value="example@gmail.com",placeholder="Enter Your Email Id")
 
-    if st.button("Add Details"):
-        add_My_Details(first_Name,last_Name,Aadhar_Number,Date_Of_Birth,phone_No,Email_Id)
-        st.success("Details Added Successfully")
-        print("Personal Details")
+        if st.button("Add Details",on_click=add_My_Details,args=(first_Name,last_Name,Aadhar_Number,Date_Of_Birth,phone_No,Email_Id)):
+        #add_My_Details(first_Name,last_Name,Aadhar_Number,Date_Of_Birth,phone_No,Email_Id)
+            st.success("Details Added Successfully")
+            print("Personal Details")
 
 
 def voter_Id_Details():
-    print("Voter Id Details")
+        st.subheader("Enter Voter Id Details")
+
+        column_1,column_2=st.columns(2)
+
+        with column_1:
+            voter_Id=st.text_input(label="Voter Id",value="",placeholder="Enter Your Voter Id")
+            fathers_Name=st.text_input(label="Fathers Name",value="",placeholder="Enter Your Fathers Name")
+        
+        with column_2:
+            mothers_Name=st.text_input(label="Mothers Name",value=" ",placeholder="Enter Your Mothers Name")
+            Address=st.text_input(label="Address",value="",placeholder="Enter Your Address")
+
+        if st.button("Add Details of voter"):
+            st.success("Details Added Successfully")
+            print("Voter Id Details")
+
         

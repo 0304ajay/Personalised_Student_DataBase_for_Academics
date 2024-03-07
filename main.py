@@ -39,7 +39,10 @@ def show_Main_Page():
     st.write("Click on Academic Details to Store Academic Details")
 
     with column_1:
-        st.button("Personal Details",on_click=personal_Details,key="Personal details")
+        personal_Details()              #THE PAGE REFRSHING PROBLEM IS SOLVED BY USING THE FUNCTION CALLING
+        st.button("Show Personal Details",key="Personal details")
+            
+        
     with column_2:     
         st.button("Academic Details",key="Academic Details")
 

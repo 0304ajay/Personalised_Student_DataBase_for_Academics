@@ -19,7 +19,8 @@ def login(user_Id,password):
         return False,None
 
 def add_My_Details(first_Name,last_Name,Aadhar_Number,Date_Of_Birth,phone_No,Email_Id):
-    print("Personal Details")
+    my_Cursor.execute("INSERT INTO PERSONAL_DETAILS_TABLE_2 (first_Name,last_Name,Aadhar_Number,Date_Of_Birth,phone_No,Email_Id) VALUES (%s,%s,%s,%s,%s,%s)",(first_Name,last_Name,Aadhar_Number,Date_Of_Birth,phone_No,Email_Id))
+    my_Database.commit()
 
 
 
