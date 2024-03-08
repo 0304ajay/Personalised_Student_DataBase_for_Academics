@@ -2,6 +2,10 @@ import streamlit as st
 import database as db
 from personal_Details import aadhar_Details #we can keep filename and the function name same
 from personal_Details import voter_Id_Details #we can keep filename and the function name same
+from academic_Details import add_Tenth_Details
+from academic_Details import add_Twelth_Details
+from academic_Details import add_Graduation_Details
+
 
 st.set_page_config(layout='wide', page_title='My Web App', page_icon=':smiley:', initial_sidebar_state='auto')
 
@@ -20,7 +24,15 @@ def personal_Details():
           with voter_Id:
                voter_Id_Details()
      
-
+def academic_Details():
+     with main_Section:
+          tenth_Details,twelth_Details,graduation_Details=main_Section.tabs(["10th Details","12th Details","Graduation Details"])
+          with tenth_Details:
+               add_Tenth_Details()
+          with twelth_Details:
+               add_Twelth_Details()
+          with graduation_Details:
+               add_Graduation_Details()
 
 
 def show_Main_Page():
@@ -40,11 +52,12 @@ def show_Main_Page():
 
     with column_1:
         personal_Details()              #THE PAGE REFRSHING PROBLEM IS SOLVED BY USING THE FUNCTION CALLING
-        st.button("Show Personal Details",key="Personal details")
+    
             
         
-    with column_2:     
+    with column_2:             
         st.button("Academic Details",key="Academic Details")
+        academic_Details()
 
 
 

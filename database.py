@@ -18,12 +18,27 @@ def login(user_Id,password):
     else:
         return False,None
 
-def add_My_Details(first_Name,last_Name,Aadhar_Number,Date_Of_Birth,phone_No,Email_Id):
-    my_Cursor.execute("INSERT INTO PERSONAL_DETAILS_TABLE_2 (first_Name,last_Name,Aadhar_Number,Date_Of_Birth,phone_No,Email_Id) VALUES (%s,%s,%s,%s,%s,%s)",(first_Name,last_Name,Aadhar_Number,Date_Of_Birth,phone_No,Email_Id))
+
+
+# Adding the Aadhar Details
+def add_My_Details(first_Name,last_Name,Aadhar_Number,Date_Of_Birth,phone_No,Email_Id,address):
+    my_Cursor.execute("INSERT INTO PERSONAL_DETAILS_TABLE_2 (first_Name,last_Name,Aadhar_Number,Date_Of_Birth,phone_No,Email_Id,address) VALUES (%s,%s,%s,%s,%s,%s,%s)",(first_Name,last_Name,Aadhar_Number,Date_Of_Birth,phone_No,Email_Id,address))
     my_Database.commit()
 
+# Adding the Voter Id Details
+def add_Voter_Details(voter_Id,father_Name,mother_Name):
+    my_Cursor.execute("INSERT INTO VOTER_ID_TABLE_3 (voter_Id,father_Name,mother_Name) VALUES (%s,%s,%s)",(voter_Id,father_Name,mother_Name))
+    my_Database.commit()
 
+def values(table_Name): #Function to retrieve the values from the table
+    my_Cursor.execute(f"SELECT * FROM {table_Name}")
+    data=my_Cursor.fetchall()
+    return data
 
+#Adding the Tenth Details
+def add_10th_Details(tenth_School_Name,tenth_Roll_No,tenth_Year_Of_Passing,tenth_Board,tenth_Percentage):
+    my_Cursor.execute("INSERT INTO TENTH_DETAILS_TABLE_4(tenth_School_Name,tenth_Roll_No,tenth_Year_Of_Passing,tenth_Board,tenth_Percentage) VALUES(%s,%s,%s,%s,%s)",(tenth_School_Name,tenth_Roll_No,tenth_Year_Of_Passing,tenth_Board,tenth_Percentage))
+    my_Database.commit()
 
     
 # def sign_Up(User_Id,password,User_Name):
