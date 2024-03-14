@@ -28,11 +28,21 @@ CREATE TABLE VOTER_ID_TABLE_3(
 
  CREATE TABLE TENTH_DETAILS_TABLE_4(
     tenth_School_Name VARCHAR(50) NOT NULL,
-    tenth_Roll_No VARCCHAR(50) NOT NULL,
+    tenth_Roll_No VARCHAR(50) NOT NULL,
     tenth_Year_Of_Passing VARCHAR(15) NOT NULL,
     tenth_Board VARCHAR(50) NOT NULL,
     tenth_Percentage VARCHAR(10) NOT NULL
- )
+ );
+
+
+CREATE TABLE TWELTH_DETAILS_TABLE_5(
+    twelth_College_Name VARCHAR(50) NOT NULL,
+    twelth_Roll_No VARCHAR(25) NOT NULL,
+    twelth_Year_Of_Passing VARCHAR(15) NOT NULL,
+    twelth_Board VARCHAR(50) NOT NULL,
+    twelth_Percentage VARCHAR(10) NOT NULL
+);
+
 -- Executing the trigger for the aadhar details Table to trigger if the user tries to add more than one details
 -- delimiter used to inform that all the code belongs to same query
 

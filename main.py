@@ -52,7 +52,6 @@ def show_Main_Page():
 
     with column_1:
         personal_Details()              #THE PAGE REFRSHING PROBLEM IS SOLVED BY USING THE FUNCTION CALLING
-    
             
         
     with column_2:             
