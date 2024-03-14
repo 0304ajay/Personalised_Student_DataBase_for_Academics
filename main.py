@@ -5,7 +5,7 @@ from personal_Details import voter_Id_Details #we can keep filename and the func
 from academic_Details import add_Tenth_Details
 from academic_Details import add_Twelth_Details
 from academic_Details import add_Graduation_Details
-
+from  academic_Details import store_Photo_Signnature
 
 st.set_page_config(layout='wide', page_title='My Web App', page_icon=':smiley:', initial_sidebar_state='auto')
 
@@ -52,7 +52,7 @@ def show_Main_Page():
 
     with column_1:
         personal_Details()              #THE PAGE REFRSHING PROBLEM IS SOLVED BY USING THE FUNCTION CALLING
-            
+        store_Photo_Signnature()
         
     with column_2:             
         st.button("Academic Details",key="Academic Details")

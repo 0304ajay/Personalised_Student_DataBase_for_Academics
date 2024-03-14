@@ -43,6 +43,22 @@ CREATE TABLE TWELTH_DETAILS_TABLE_5(
     twelth_Percentage VARCHAR(10) NOT NULL
 );
 
+
+CREATE TABLE GRADUATION_DETAILS_TABLE_6(
+    graduation_College_Name VARCHAR(50),
+    graduation_Roll_No VARCHAR(25),
+    graduation_Year_Of_Passing VARCHAR(15),
+    graduation_Board VARCHAR(50),
+    SEM1_GPA FLOAT,
+    SEM2_GPA FLOAT,
+    SEM3_GPA FLOAT,
+    SEM4_GPA FLOAT,
+    SEM5_GPA FLOAT,
+    SEM6_GPA FLOAT,
+    SEM7_GPA FLOAT,
+    SEM8_GPA FLOAT,
+    graduation_Percentage FLOAT
+);
 -- Executing the trigger for the aadhar details Table to trigger if the user tries to add more than one details
 -- delimiter used to inform that all the code belongs to same query
 

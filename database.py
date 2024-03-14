@@ -40,10 +40,21 @@ def add_10th_Details(tenth_School_Name,tenth_Roll_No,tenth_Year_Of_Passing,tenth
     my_Cursor.execute("INSERT INTO TENTH_DETAILS_TABLE_4(tenth_School_Name,tenth_Roll_No,tenth_Year_Of_Passing,tenth_Board,tenth_Percentage) VALUES(%s,%s,%s,%s,%s)",(tenth_School_Name,tenth_Roll_No,tenth_Year_Of_Passing,tenth_Board,tenth_Percentage))
     my_Database.commit()
 
+
+
 #Adding the Twelth Details
 def add_12th_Details(twelth_College_Name,twelth_Roll_No,twelth_Year_Of_Passing,twelth_Board,twelth_Percentage):
     my_Cursor.execute("INSERT INTO TWELTH_DETAILS_TABLE_5(twelth_College_Name,twelth_Roll_No,twelth_Year_Of_Passing,twelth_Board,twelth_Percentage) VALUES(%s,%s,%s,%s,%s)",(twelth_College_Name,twelth_Roll_No,twelth_Year_Of_Passing,twelth_Board,twelth_Percentage))
     my_Database.commit()
+
+
+#Adding the Graduation Details
+def add_under_Graduation_Details(graduation_College_Name, graduation_Roll_No, graduation_Year_Of_Passing, graduation_Board, sem_1_GPA, sem_2_GPA, sem_3_GPA, sem_4_GPA, sem_5_GPA, sem_6_GPA, sem_7_GPA, sem_8_GPA, graduation_Percentage):
+        my_Cursor.execute("INSERT INTO GRADUATION_DETAILS_TABLE_6 (graduation_College_Name, graduation_Roll_No, graduation_Year_Of_Passing, graduation_Board, SEM1_GPA, SEM2_GPA, SEM3_GPA, SEM4_GPA, SEM5_GPA, SEM6_GPA, SEM7_GPA, SEM8_GPA, graduation_Percentage) VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s)",
+                          (graduation_College_Name, graduation_Roll_No, graduation_Year_Of_Passing, graduation_Board, sem_1_GPA, sem_2_GPA, sem_3_GPA, sem_4_GPA, sem_5_GPA, sem_6_GPA, sem_7_GPA, sem_8_GPA, graduation_Percentage))
+        my_Database.commit()
+
+
 # def sign_Up(User_Id,password,User_Name):
 #     my_Cursor.execute("INSERT INTO ADMINISTRATOR_TABLE_1 (admin_Id,passwrd,admin_Name) VALUES (%s,%s,%s)",(User_Id,password,User_Name))
 #     my_Database.commit() #To execute the SQL statements, COMMIT is used to make the changes permanent in the database.
