@@ -59,6 +59,13 @@ CREATE TABLE GRADUATION_DETAILS_TABLE_6(
     SEM8_GPA FLOAT,
     graduation_Percentage FLOAT
 );
+
+
+CREATE TABLE NOTES_TABLE_7(
+    note_Id INT,
+    note_Title VARCHAR(100),
+    note_Description VARCHAR(1000)
+);
 -- Executing the trigger for the aadhar details Table to trigger if the user tries to add more than one details
 -- delimiter used to inform that all the code belongs to same query
 

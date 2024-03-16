@@ -7,7 +7,8 @@ from database import values
 from database import add_10th_Details
 from database import add_12th_Details
 from database import add_under_Graduation_Details
-
+from database import get_Latest_Node_Id
+from database import add_Notes_Details
 #Code To Upload photos and store in the database
 # upload_File = st.sidebar.file_uploader(label="Upload Your Graduation Marksheet")
         
@@ -174,7 +175,11 @@ def copy_To_Clipboard_3():
 def store_Photo_Signnature():
     upload_File = st.sidebar.file_uploader(label="Upload Your Photo")
     upload_File = st.sidebar.file_uploader(label="Upload Your  Signature")
-
+    st.sidebar.markdown("""
+    ## Notes
+    - In the First Place Upload Your Photo.
+    - In the Second Upload Your Signature.
+""")
 
 
 def add_Tenth_Details():
@@ -239,7 +244,7 @@ def add_Twelth_Details():
             file_Name=upload_File.name
             insert_pdf_2(file_Name,file_Data)
             st.success(f"Successfully Uplpoaded and Saved {file_Name} to the Database")
-        
+            
         if st.button("Add 12th Details",on_click=add_12th_Details,args=(twelth_College_Name,twelth_Roll_No,twelth_Year_Of_Passing,twelth_Board,twelth_Percentage)):
             st.success("Details Added Successfully")
 
@@ -328,4 +333,30 @@ def add_Graduation_Details():
             st.markdown(download_Link,unsafe_allow_html=True)
         st.button("Copy to Clipboard",on_click=copy_To_Clipboard_3)
 
+def  add_Notes():
+    st.subheader("Add Notes")
+    note_number=get_Latest_Node_Id()
+    note_Id=int(note_number+1)
+    st.write("Note Number :",note_number+1)
+    note_Title=st.text_input(label="Enter Heading of the Notes :",value="")
+    note_Description=st.text_area(label="Enter Your Notes",value="",height=200)
+    if st.button("Add Notes",on_click=add_Notes_Details,args=(note_Id,note_Title,note_Description),key="Add Notes"):
+        st.success("Notes Added Successfully")
 
+    if st.button("Show Notes",key="Show Notes"):
+        data=values('NOTES_TABLE_7')
+        if data:
+            for row in data:
+                st.write(f"Note Id : {row[0]}")
+                st.write(f"Note Title : {row[1]}")
+                st.write(f"Note Description : {row[2]}")
+                if st.button(label="Delete",key=f"Deleting the Key" +str(row[0])):
+                    st.write("Deleted Successfully")
+
+                st.write("---------------------------------------------------")
+            
+    
+
+
+
+ 

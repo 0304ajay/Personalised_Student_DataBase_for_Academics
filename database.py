@@ -55,6 +55,18 @@ def add_under_Graduation_Details(graduation_College_Name, graduation_Roll_No, gr
         my_Database.commit()
 
 
+#To get Notes Id
+def get_Latest_Node_Id():
+    my_Cursor.execute("SELECT MAX(note_Id) FROM NOTES_TABLE_7")
+    latest_note_Id=my_Cursor.fetchone()[0]
+    return latest_note_Id if latest_note_Id else 0
+
+def add_Notes_Details(note_Id,note_Title,note_Description):
+    my_Cursor.execute("INSERT INTO NOTES_TABLE_7(note_Id,note_Title,note_Description) VALUES(%s,%s,%s)",(note_Id,note_Title,note_Description))
+    my_Database.commit()
+
+
+    
 # def sign_Up(User_Id,password,User_Name):
 #     my_Cursor.execute("INSERT INTO ADMINISTRATOR_TABLE_1 (admin_Id,passwrd,admin_Name) VALUES (%s,%s,%s)",(User_Id,password,User_Name))
 #     my_Database.commit() #To execute the SQL statements, COMMIT is used to make the changes permanent in the database.

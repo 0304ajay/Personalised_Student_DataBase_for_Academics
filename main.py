@@ -5,8 +5,8 @@ from personal_Details import voter_Id_Details #we can keep filename and the func
 from academic_Details import add_Tenth_Details
 from academic_Details import add_Twelth_Details
 from academic_Details import add_Graduation_Details
-from  academic_Details import store_Photo_Signnature
-
+from academic_Details import store_Photo_Signnature
+from academic_Details import add_Notes
 st.set_page_config(layout='wide', page_title='My Web App', page_icon=':smiley:', initial_sidebar_state='auto')
 
 headerSection = st.container()
@@ -26,13 +26,15 @@ def personal_Details():
      
 def academic_Details():
      with main_Section:
-          tenth_Details,twelth_Details,graduation_Details=main_Section.tabs(["10th Details","12th Details","Graduation Details"])
+          tenth_Details,twelth_Details,graduation_Details,notes,Work_Tracker=main_Section.tabs(["10th Details","12th Details","Graduation Details","Notes","Work Tracker"])
           with tenth_Details:
                add_Tenth_Details()
           with twelth_Details:
                add_Twelth_Details()
           with graduation_Details:
                add_Graduation_Details()
+          with notes:
+            add_Notes()
 
 
 def show_Main_Page():
