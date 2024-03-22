@@ -1,5 +1,6 @@
 -- Tables Creation
 
+-- 
 CREATE TABLE ADMINISTRATOR_TABLE_1(
     admin_Id INT NOT NULL PRIMARY KEY,
     admin_Name VARCHAR(50),

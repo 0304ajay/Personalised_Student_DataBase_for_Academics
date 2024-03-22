@@ -40,7 +40,7 @@ def academic_Details():
 def show_Main_Page():
     st.title(f"Hi {st.session_state['name']}")
     st.write("Welcome to Personalised Student DataBase for Academics")
-    image = open("C:/Users/Ajay/Downloads/DBMS PROJECT/PROFILE (Phone).jpg", "rb").read()
+    image = open("PROFILE.jpg", "rb").read()
     # Display the image
     st.image(image, caption='Your Image',  width=150, use_column_width=False, clamp=True)
     st.write("")
