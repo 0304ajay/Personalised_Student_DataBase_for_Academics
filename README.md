@@ -20,7 +20,7 @@ The main Goal of the project is to store all the important personal details at a
   pip install streamlit
   ```
 - open the file **database.py** and update your user and password of your sql database in the line number 3.
-- - Open [MySql Work Bench](https://dev.mysql.com/downloads/mysql/) goto local instance and connect to the local server
+- Open [MySql Work Bench](https://dev.mysql.com/downloads/mysql/) goto local instance and connect to the local server
 - Go to **schemas** which is on the left side beside the administration  and click on it then right click the schemas space then select the option **create schema** and give the name as **personalised_student_database_for_academics** and then apply.
 - Then if you have multiple schemas make the **personalised_student_database_for_academics** as a default schema.
 - Then go to file ->open sql script File ->choose the file **Database.sql** from the project folder.
@@ -31,6 +31,6 @@ The main Goal of the project is to store all the important personal details at a
   ```
 > [!WARNING]
   > Some times you make get error as shown in this case you just copy the relative path of the file and change the back ward slash to forward slash and try to run.
-  ```
-``
+
+![Error Message](error.png)
 
