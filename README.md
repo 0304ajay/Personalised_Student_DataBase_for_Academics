@@ -36,4 +36,13 @@ The main Goal of the project is to store all the important personal details at a
 
 ## Configuration Guide
 - Replace the **name** with your Original name.
-- Upload A photo into the project folder from the file explorer in system and then copy its path and the change the path of the image in the main.py file at line no 43 
+- Upload A photo into the project folder from the file explorer in system and then copy its path and the change the path of the image in the main.py file at line no 43.
+
+## Additional Resources 
+- [Streamlit Documentation](https://docs.streamlit.io/)
+- [Mysql](https://dev.mysql.com/downloads/mysql/)
+- [Sql Commands](https://www.w3schools.com/MySQL/default.asp)
+
+## Support and Contact Information
+- If any issuse is not resolved you can directly message me in github.
+- connect with me in [Linked in](https://www.linkedin.com/in/k-ajay-kumar-reddy-b4a826216/)
