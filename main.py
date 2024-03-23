@@ -26,7 +26,7 @@ def personal_Details():
      
 def academic_Details():
      with main_Section:
-          tenth_Details,twelth_Details,graduation_Details,notes,Work_Tracker=main_Section.tabs(["10th Details","12th Details","Graduation Details","Notes","Work Tracker"])
+          tenth_Details,twelth_Details,graduation_Details,notes,Work_Tracker,developer_Options=main_Section.tabs(["10th Details","12th Details","Graduation Details","Notes","Work Tracker","Developer Options"])
           with tenth_Details:
                add_Tenth_Details()
           with twelth_Details:
