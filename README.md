@@ -34,3 +34,6 @@ The main Goal of the project is to store all the important personal details at a
 
 ![Error Message](error.png)
 
+## Configuration Guide
+- Replace the **name** with your Original name.
+- Upload A photo into the project folder from the file explorer in system and then copy its path and the change the path of the image in the main.py file at line no 43 
