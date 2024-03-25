@@ -18,3 +18,6 @@ In python we use this syntax for multi line strings
 
 7 Key:
     key parameter serves as a unique identifier for a particular widget. It helps Streamlit differentiate between multiple instances of the same widget within the same app.
+8 unsafe_allow_html=True:
+  When you set unsafe_allow_html=True, you're explicitly telling Streamlit that it's okay to render HTML content. By default, Streamlit strips HTML tags from any string passed to st.write() or similar functions for safety reasons.
+  without this(,unsafe_allow_html=True) the html tags will not work

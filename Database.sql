@@ -67,6 +67,12 @@ CREATE TABLE NOTES_TABLE_7(
     note_Title VARCHAR(100),
     note_Description VARCHAR(1000)
 );
+
+CREATE TABLE QUOTATIONS_8(
+    quotation_Id INT,
+    quotation_Title VARCHAR(100),
+    quotation_Description VARCHAR(1000)
+);
 -- Executing the trigger for the aadhar details Table to trigger if the user tries to add more than one details
 -- delimiter used to inform that all the code belongs to same query
 
@@ -92,3 +98,14 @@ CREATE TABLE NOTES_TABLE_7(
 -- INSERTING INTO TABLES
 INSERT INTO ADMINISTRATOR_TABLE_1 VALUES(1,'KODIDELA AJAY KUMAR REDDY','ajay0304');
 INSERT INTO ADMINISTRATOR_TABLE_1 VALUES(2,'KODIDELA CHAITANYA KUMAR REDDY','chai0304');
+
+INSERT INTO QUOTATIONS_8 VALUES(1,'QUOTATION 1','"The only way to do great work is to love what you do." – Steve Jobs');
+INSERT INTO QUOTATIONS_8 VALUES(2,'QUOTATION 2','"Success is not the key to happiness. Happiness is the key to success. If you love what you are doing, you will be successful." – Albert Schweitzer');
+INSERT INTO QUOTATIONS_8 VALUES(3,'QUOTATION 3','"The only limit to our realization of tomorrow will be our doubts of today." – Franklin D. Roosevelt');
+INSERT INTO QUOTATIONS_8 VALUES(4,'QUOTATION 4','"The best way to predict the future is to create it." – Peter Drucker');
+INSERT INTO QUOTATIONS_8 VALUES(5,'QUOTATION 5','"The only way to achieve the impossible is to believe it is possible." – Charles Kingsleigh');
+INSERT INTO QUOTATIONS_8 VALUES(6,'QUOTATION 6','"The only way to do great work is to love what you do." – Steve Jobs');
+INSERT INTO QUOTATIONS_8 VALUES(7,'QUOTATION 7','"Success is not the key to happiness. Happiness is the key to success. If you love what you are doing, you will be successful." – Albert Schweitzer');
+INSERT INTO QUOTATIONS_8 VALUES(8,'QUOTATION 8','"The only limit to our realization of tomorrow will be our doubts of today." – Franklin D. Roosevelt');
+INSERT INTO QUOTATIONS_8 VALUES(9,'QUOTATION 9','"The best way to predict the future is to create it." – Peter Drucker');
+INSERT INTO QUOTATIONS_8 VALUES(10,'QUOTATION 10','"The only way to achieve the impossible is to believe it is possible." – Charles Kingsleigh');

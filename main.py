@@ -1,4 +1,5 @@
 import streamlit as st
+import random
 import database as db
 from personal_Details import aadhar_Details #we can keep filename and the function name same
 from personal_Details import voter_Id_Details #we can keep filename and the function name same
@@ -7,6 +8,9 @@ from academic_Details import add_Twelth_Details
 from academic_Details import add_Graduation_Details
 from academic_Details import store_Photo_Signnature
 from academic_Details import add_Notes
+from developer import execute
+from academic_Details import tracker
+from database import quotes
 st.set_page_config(layout='wide', page_title='My Web App', page_icon=':smiley:', initial_sidebar_state='auto')
 
 headerSection = st.container()
@@ -35,17 +39,24 @@ def academic_Details():
                add_Graduation_Details()
           with notes:
             add_Notes()
+          with Work_Tracker:
+            tracker()
+          with developer_Options:
+            execute()
 
 
 def show_Main_Page():
     st.title(f"Hi {st.session_state['name']}")
     st.write("Welcome to Personalised Student DataBase for Academics")
     image = open("PROFILE.jpg", "rb").read()
+    
     # Display the image
-    st.image(image, caption='Your Image',  width=150, use_column_width=False, clamp=True)
+    st.image(image, caption='Your Image', width=150, use_column_width=False,clamp=True)
     st.write("")
     st.write("")
     st.write("")
+    data=quotes()
+    st.write(f"<h3 style= 'color :green;'>{data[0][2]}</h3>",unsafe_allow_html=True)
     st.write("")
     st.write("")
     st.warning("NOTE:")

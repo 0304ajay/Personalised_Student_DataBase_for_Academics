@@ -1,5 +1,5 @@
 import mysql.connector #Python applications to MySQL databases,
-
+import random
 my_Database=mysql.connector.connect(
     host="localhost",
     user="root",
@@ -65,7 +65,15 @@ def add_Notes_Details(note_Id,note_Title,note_Description):
     my_Cursor.execute("INSERT INTO NOTES_TABLE_7(note_Id,note_Title,note_Description) VALUES(%s,%s,%s)",(note_Id,note_Title,note_Description))
     my_Database.commit()
 
+def quotes():
+    my_Cursor.execute('SELECT * FROM QUOTATIONS_8 WHERE quotation_Id=(%s)',(random.randint(1,10),))
+    data=my_Cursor.fetchall()
+    return data
 
+def execute_Queries(commandLine):
+    my_Cursor.execute(commandLine)
+    data=my_Cursor.fetchall()
+    return data
     
 # def sign_Up(User_Id,password,User_Name):
 #     my_Cursor.execute("INSERT INTO ADMINISTRATOR_TABLE_1 (admin_Id,passwrd,admin_Name) VALUES (%s,%s,%s)",(User_Id,password,User_Name))

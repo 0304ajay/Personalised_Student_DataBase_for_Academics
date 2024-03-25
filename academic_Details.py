@@ -354,8 +354,12 @@ def  add_Notes():
                     st.write("Deleted Successfully")
 
                 st.write("---------------------------------------------------")
-            
-    
+
+                
+
+def tracker():
+        st.write(f"<div style='display:inline;'> Hello <h3>{st.session_state['name']}</h1></div>",unsafe_allow_html=True)
+        st.write("Welcome to the Work Tracker")
 
 
 
