@@ -1,6 +1,7 @@
 import streamlit as st
 import random
 import database as db
+import numpy as np
 from personal_Details import aadhar_Details #we can keep filename and the function name same
 from personal_Details import voter_Id_Details #we can keep filename and the function name same
 from academic_Details import add_Tenth_Details
@@ -103,20 +104,6 @@ with headerSection:
             show_Main_Page()  
         else:
             show_Login_Page()
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 #               Trailed Data

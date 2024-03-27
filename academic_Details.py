@@ -149,8 +149,65 @@ def retrieve_pdf_data_4(file_Id):
     conn.close()
     return file_Data
 
+def create_table_5():
+    conn=sqlite3.connect('photo.db')
+    c=conn.cursor()
+    c.execute('''CREATE TABLE IF NOT EXISTS Photo_Table(id INTEGER PRIMARY KEY AUTOINCREMENT,file_Name TEXT,file_Data BLOB)''')
+    conn.commit()
+    conn.close()
 
+def insert_pdf_5(file_Name,file_Data):
+    conn=sqlite3.connect('photo.db')
+    c=conn.cursor()
+    c.execute('''INSERT INTO Photo_Table(file_Name,file_Data) VALUES(?,?)''',(file_Name,file_Data))
+    conn.commit()
+    conn.close()
 
+def retrieve_Pdf_5():
+    conn=sqlite3.connect("photo.db")
+    c=conn.cursor()
+    c.execute('''SELECT id,file_Name FROM Photo_Table''')
+    pdf_File=c.fetchall()
+    conn.close()
+    return pdf_File
+
+def retrieve_pdf_data_5(file_Id):
+    conn=sqlite3.connect('photo.db')
+    c=conn.cursor()
+    c.execute('''SELECT file_Data FROM Photo_Table WHERE id=?''',(file_Id,))
+    file_Data=c.fetchone()[0]
+    conn.close()
+    return file_Data
+
+def create_table_6():
+    conn=sqlite3.connect('signature.db')
+    c=conn.cursor()
+    c.execute('''CREATE TABLE IF NOT EXISTS signature_Table(id INTEGER PRIMARY KEY AUTOINCREMENT,file_Name TEXT,file_Data BLOB)''')
+    conn.commit()
+    conn.close()
+
+def insert_pdf_6(file_Name,file_Data):
+    conn=sqlite3.connect('signature.db')
+    c=conn.cursor()
+    c.execute('''INSERT INTO signature_Table(file_Name,file_Data) VALUES(?,?)''',(file_Name,file_Data))
+    conn.commit()
+    conn.close()
+
+def retrieve_Pdf_6():
+    conn=sqlite3.connect("signature.db")
+    c=conn.cursor()
+    c.execute('''SELECT id,file_Name FROM signature_Table''')
+    pdf_File=c.fetchall()
+    conn.close()
+    return pdf_File
+
+def retrieve_pdf_data_6(file_Id):
+    conn=sqlite3.connect('signature.db')
+    c=conn.cursor()
+    c.execute('''SELECT file_Data FROM signature_Table WHERE id=?''',(file_Id,))
+    file_Data=c.fetchone()[0]
+    conn.close()
+    return file_Data
 
 def copy_To_Clipboard_1():
     data=values("TENTH_DETAILS_TABLE_4")
@@ -174,13 +231,42 @@ def copy_To_Clipboard_3():
 
 def store_Photo_Signnature():
     upload_File = st.sidebar.file_uploader(label="Upload Your Photo")
+    create_table_5()
+    if upload_File is not None:
+        file_Data=upload_File.getvalue()
+        file_Name=upload_File.name
+        insert_pdf_5(file_Name,file_Data)
+        st.sidebar.success(f"Successfully Uploaded and Saved {file_Name} to the Database")
+    if st.sidebar.button(label="Download Photo"):
+        pdf_Files=retrieve_Pdf_5()
+        if pdf_Files:
+            pdf_File_Itr=pdf_Files[0]
+            st.write("Uploaded PDF Files :")
+            st.write(pdf_File_Itr[1])
+            download_Link=f'<a href="data:application/octet-stream;base64,{base64.b64encode(retrieve_pdf_data_5(pdf_File_Itr[0])).decode()}" download="{pdf_File_Itr[1]}">Click ME to Download⬇️ PHOTO</a>'
+            st.sidebar.markdown(download_Link,unsafe_allow_html=True)
+
     upload_File = st.sidebar.file_uploader(label="Upload Your  Signature")
+    create_table_6()
+    if upload_File is not None:
+        file_Data=upload_File.getvalue()
+        file_Name=upload_File.name
+        insert_pdf_6(file_Name,file_Data)
+        st.sidebar.success(f"Successfully Uploaded and Saved {file_Name} to the Database")
+    if st.sidebar.button(label="Download Signature"):
+        pdf_Files=retrieve_Pdf_6()
+        if pdf_Files:
+            pdf_File_Itr=pdf_Files[0]
+            st.write("Uploaded PDF Files :")
+            st.write(pdf_File_Itr[1])
+            download_Link=f'<a href="data:application/octet-stream;base64,{base64.b64encode(retrieve_pdf_data_6(pdf_File_Itr[0])).decode()}" download="{pdf_File_Itr[1]}">Click ME to Download⬇️ Signature</a>'
+            st.sidebar.markdown(download_Link,unsafe_allow_html=True)
     st.sidebar.markdown("""
     ## Notes
     - In the First Place Upload Your Photo.
     - In the Second Upload Your Signature.
 """)
-
+    
 
 def add_Tenth_Details():
     st.subheader('Enter 10th Details')
