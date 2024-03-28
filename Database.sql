@@ -77,21 +77,29 @@ CREATE TABLE QUOTATIONS_8(
 -- delimiter used to inform that all the code belongs to same query
 
 -- DELIMITER //
--- CREATE TRIGGER check_personal_Details_limit
--- BEFORE INSERT ON PERSONAL_DETAILS_TABLE_2
--- FOR EACH ROW
+-- CREATE TRIGGER check_personal_Details_limit 
+-- BEFORE INSERT ON PERSONAL_DETAILS_TABLE_2 
+-- FOR EACH ROW 
 -- BEGIN 
 --     DECLARE num_Rows INT;
 --     SELECT COUNT(*) INTO num_Rows FROM PERSONAL_DETAILS_TABLE_2;
-    
---     IF num_Rows >= 1 THEN
---         SIGNAL SQLSTATE '01000'
---         SET MESSAGE_TEXT = 'WARNING: ONLY ONE PERSON DETAILS NEEDED TO BE STORED';
+--     IF num_Rows >= 1 THEN 
+--         SIGNAL SQLSTATE '01000' SET MESSAGE_TEXT = 'WARNING: ONLY ONE PERSON DETAILS NEEDED TO BE STORED'; 
 --     END IF;
--- END;
+-- END; 
 -- //
+-- DELIMITER ;
 
 
+
+
+-- Additional SQL statements if any
+
+
+
+
+
+-- Executing the trigger for the voter details Table to trigger if the user tries to add more than one details
         
 			
     

@@ -28,3 +28,7 @@ In python we use this syntax for multi line strings
 
 10 c.execute('''CREATE TABLE IF NOT EXISTS signature_Table(id INTEGER PRIMARY KEY AUTOINCREMENT,file_Name TEXT,file_Data BLOB)''')
   This is the table which is created in the signature.db database
+
+11 SQLSTATE CODES:
+  45000 -> TO RAISE EXCEPTIONS
+  01000 -> TO JUST DISPLAY WARNINGS
