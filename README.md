@@ -8,7 +8,7 @@ Then comes the **Personal Details** section Which has optionality to store detai
 The main Goal of the project is to store the important personal details at a single place which  reduces the  amount time to search and also reduce the the amount of time in filling any online forms which requires our details.
 ## key Features
 - First Most Key feture is copying the required details on to the clipboard by just clicking on copy which copies complete details of the particular section so the user can just paste without any type.
-- Then Comes storing of the **files(pdf)** this feature helps user to store the images and also downloading the respected  files.
+- Then Comes storing of  **files(pdf)** this feature helps user to store the images and also downloading the respected  files.
 - The next feature is the work Tracker Which keep shows us the daily streak of our work.
 
 # Installation
