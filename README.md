@@ -5,7 +5,7 @@ Personalised Database is a web application that basically allow user to store th
 [Personalised Student Database](https://github.com/0304ajay/Personalised_Student_DataBase_for_Academics) has many functionalites some of them are, storing the **Academic Details** and **Personal details**. Further going on the **Academic Details** Section has an optionality to store complete Academic details of user's, Tenth Standard , Twelth Standard , Graduation Details , Notes ,following by the Daily Work Tracker .
 Then comes the **Personal Details** section Which has optionality to store details of user driving Licence and Aadhar Details.
 ## Goal
-The main Goal of the project is to store all the important personal details at a single place which  reduces the  amount time to search and also reduce the the amount of time in filling any online forms which requires our details.
+The main Goal of the project is to store the important personal details at a single place which  reduces the  amount time to search and also reduce the the amount of time in filling any online forms which requires our details.
 ## key Features
 - First Most Key feture is copying the required details on to the clipboard by just clicking on copy which copies complete details of the particular section so the user can just paste without any type.
 - Then Comes storing of the **files(pdf)** this feature helps user to store the images and also downloading the respected  files.
